@@ -1,0 +1,3 @@
+rootProject.name='Tambola'
+include ':hostApp'
+include ':ticketgenerator'

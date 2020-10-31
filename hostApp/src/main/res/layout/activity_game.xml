@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name = "gameView"
+            type = "com.aniruddhupadhyay.myapplication.viewModels.GameDBViewmodel"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorBackGround"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_thin"
+            android:textColor="@color/colorText"
+            android:textSize="230sp"
+            android:transitionName="TV Shared"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25" />
+
+        <Button
+            android:id="@+id/showBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_blue"
+            android:textColor="#fff"
+            android:textSize="30sp"
+            android:transitionName="Btn1 shared"
+            android:padding="10dp"
+            android:text="Show Numbers"
+            app:layout_constraintBaseline_toBaselineOf="@+id/nextBtn"
+            app:layout_constraintEnd_toStartOf="@+id/nextBtn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/nextBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_blue"
+            android:padding="10dp"
+            android:text="Next"
+            android:onClick="@{()-> gameView.nextNum()}"
+            android:textColor="#fff"
+            android:textSize="30sp"
+            android:transitionName="Btn2 Shared"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/showBtn"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.39999998" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/roboto_light"
+            android:text="@{gameView.currentTimeString}"
+            android:textAlignment="center"
+            android:textColor="@color/colorText"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
